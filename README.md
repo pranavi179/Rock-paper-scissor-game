@@ -8,7 +8,7 @@ Here, you will be playing with the computer which choses it's choices randomly. 
 The game starts with your choice . 
 
 There are two game modes "BEST OF 3" and "BEST OF 5".
-You have to choose any of the above two.
+You have to choose any ONE of the above TWO.
 
 ACTUAL GAME STARTS FROM HERE..!
 
