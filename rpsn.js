@@ -1,7 +1,10 @@
-function() {
-var player = ['user', 'computer'];
+(function() {
+    window.onload = init;
+
+function init() {
+    var player = ['user', 'computer'];
 var choices = ['rock','paper','scissors'];
- 
+
 var user_wins = " YOU WINS " ;
 var comp_wins = " COMPUTER WINS ";
 var DRAW = " draw ";
@@ -15,42 +18,45 @@ var clicks = 0;
 
 
 // score elements
- var userScore = getById('score');
+var userScore = getById('score');
 var compScore = getById('computerScore');
 
 userScore.textContent = score;
-compScore.textContent = computer_score;
+compScore.textContent = computerScore;
 
-var game = getById('id');
-var userChoices = game.getElementsByTagName('button');
+var user = getById('user');
+var userChoices = user.getElementsByTagName('button');
 
 var comp = getById('computer');
-var computerChoices = comp.getElementByTagName('div');
+var compChoices = comp.getElementByTagName('div');
 
 // get the results element and hide it initially 
 
 var results = getElementById('results');
 hide(results);
 
-var gameover = getElementById('gameover');
-hide(gameover);
+var gameOver = getElementById('gameOver');
+hide(gameOver);
 
 var intro = getById('intro');
 var bestof3 = getById('bestof3');
 var bestof5 = getById('bestof5');
 
 //start the best of 3game
-var bestof3 = getElementById('bestof3');
-bestof3.enable =  true;
-onclick(function);	
+//var bestof3 = getElementById('bestof3');
+bestof3.onclick = function()
+{
+enablegame();
+gametype = 3;
+}	
 
 bestof5.onclick = function()
 {
 enablegame();
 gameType = 5;
-}
+}     
 
-function.enableGame()
+function enableGame()
 {
 enable(userChoices);
 hide(intro);
@@ -64,8 +70,8 @@ for(var i = 0; i < userChoices.length; i++) {
 
 function computerSelection() {
     var randomIndex = Math.floor(Math.random() * CHOICES_LENGTH);
-    var compChoice = choices[randomIndex];
-    return compChoice;
+    var compChoices = choices[randomIndex];
+    return compChoices;
 }
  
 function selection() {
@@ -106,41 +112,30 @@ function selection() {
 
     if(chosen === comp) {
         results.textContent = DRAW;
-        // ugly repetive code. what can I do???
-        timeout();
         results.innerHTML += MEH;
+        timeout();
     } 
-    else if(chosen === 'rock' && comp === 'scissors') {
+    else if((chosen === 'rock' && comp === 'scissors') || (chosen === 'paper' && comp === 'rock') || (chosen === 'scissors' && comp === 'paper')) {
+        
         results.textContent = USER_WINS;
-        score += 1;
-        userScore.textContent = score;
-        timeout();
         results.innerHTML += SMILE;
-    }
-    else if(chosen === 'paper' && comp === 'rock') {
-        results.textContent = USER_WINS;
+        
         score += 1;
-        userScore.textContent = score;
+        userScoreElement.textContent = score;
         timeout();
-        results.innerHTML += SMILE;
-    }
-    else if(chosen === 'scissors' && comp === 'paper') {
-        results.textContent = USER_WINS;
-        score += 1;
-        userScore.textContent = score;
-        timeout();
-        results.innerHTML += SMILE;
+        
     }
     else {
+        
         results.textContent = COMP_WINS;
-        computer_score +=1;
-        compScore.textContent = computer_score;
-        timeout();
         results.innerHTML += FROWN;
+        
+        computerScore +=1;
+        computerScoreElement.textContent = computerScore;
+        timeout();
+        
     }
-
-
-    console.log(clicks);
+    
 }
 
 
@@ -187,6 +182,7 @@ function timeout() {
             enable(compChoices);
     }, 2000)
 }
+}
 })();
 
 
@@ -199,9 +195,9 @@ function timeout() {
 
 
 
-
-const logic = {
-    rock: { w: 'scissor', l: 'paper'},
+/// psuedo code -pranavi
+// ** var logic = {
+ /*  rock: { w: 'scissor', l: 'paper'},
     paper: {w:'rock', l:'scissor'},
     scissor: {w:'paper', l:'rock'},
 }
@@ -225,3 +221,4 @@ p1.setChoice('rock');
 p2.setChoice('scissor');
 
 p1.challengeOther(p2); //true	 (Win)
+*/
