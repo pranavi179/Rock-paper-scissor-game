@@ -14,7 +14,9 @@ ACTUAL GAME STARTS FROM HERE..!
 
 The winner of that round depends on the items formed. If the same item is formed, it's a tie. If a rock and scissors are formed, the rock wins, because a rock can smash scissors. If scissors and paper are formed, the scissors win, because scissors can cut paper. If paper and a rock are formed, the paper wins, because a sheet of paper can cover a rock. After one round is completed, another is begun. Play continues until one player reaches a predetermined score, or whenever the players' boredom is alleviated.
 
-There are multiple chances by restarting the game..! 
+There is a result counting in the side bars. By comparing you'll get the result of thr game..!
+
+There will be multiple chances to play again when the game is done by just restarting the game..! 
 
 HOPE YOU LIKE THE GAME!!!
 
