@@ -153,7 +153,7 @@ body {
 	background-color: rgba(255, 255, 255, .9);
 	padding: 30px;
 	box-sizing: border-box;
-	border: 7px solid #7AB317;
+	border: 7px solid rgb(128, 6, 121);
 	
 	width: 100%;
 	z-index: 10;
