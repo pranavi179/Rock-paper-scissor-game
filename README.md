@@ -20,5 +20,8 @@ There will be multiple chances to play again when the game is done by just resta
 
 HOPE YOU LIKE THE GAME!!!
 
+
+![rps_main](https://github.com/pranavi179/Rock-paper-scissor-game/blob/master/output/rps.png)
+
 THANK YOU PEEPS..!
 
